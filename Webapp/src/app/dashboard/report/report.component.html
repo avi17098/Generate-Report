@@ -1,0 +1,50 @@
+<h1>Reports</h1>
+<div>
+  <table id="users">
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Agent Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Type</th>
+        <th>Call Log</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allReport">
+        <td>{{i.customerId?.customerName}}</td>
+        <td>{{i.agentId?.agentName}}</td>
+        <td>{{i.startDate|date:short}}</td>
+        <td>{{i.endDate|date:short}}</td>
+        <td>{{getType(i.type)}}</td>
+        <td>{{i.callLog}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+<h1>Feedback</h1>
+<div>
+  <table id="users">
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>User Comments</th>
+        <th>Rating</th>
+        <th>Start Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of allFeedback">
+        <td>{{i.customerId?.customerName}}</td>
+        <td>{{i.userComment}}</td>
+        <td>{{i.rating}}</td>
+        <td>{{i.createdAt|date:short}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
